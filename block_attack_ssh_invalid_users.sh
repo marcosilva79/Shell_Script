@@ -5,7 +5,7 @@ for x in $(cat /tmp/bloquear_ip_txt | uniq); do iptables -A INPUT -s $x -p tcp -
 for x in $(cat /tmp/bloquear_ip_txt | uniq); do echo  ALL:$x >> /etc/hosts.deny ; done
 echo " " > /tmp/bloquear_ip_txt
 echo " " > /var/log/secure
-echo "Reiniciado Rsyslog ..."
+echo "Reiniciando Rsyslog ..."
 # Apos "zerar" arquivo de log é necessário reinicializar rsyslog para o servico voltar a gravar no log apagado.
 /etc/init.d/rsyslog restart
 
